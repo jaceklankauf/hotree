@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export class Section extends React.Component {
   render() {
@@ -11,8 +12,12 @@ export class Section extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
+
+Section.propTypes = {
+  text: PropTypes.string,
+};
 
 export default Section;
