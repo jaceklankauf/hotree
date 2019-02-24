@@ -10,7 +10,7 @@
 
 .htr-titlebar-bottom {
   background-color: $blue-dark;
-  height: 100%;
+  height: $titlebar-height - 1.5 * $spacer;
   color: $gray-light;
   font-family: $font;
   @include text-xxlarge();
