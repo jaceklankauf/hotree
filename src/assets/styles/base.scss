@@ -3,6 +3,8 @@
 
 @import "../../modules/Titlebar/Titlebar";
 @import "../../base/common/components/Section/Section";
+@import "../../modules/AboutComponent/AboutComponent";
+@import "../../base/common/components/Input/Input";
 
 html {
   box-sizing: border-box;
@@ -24,17 +26,4 @@ body {
   width: $container-width;
   padding: 0 4 * $spacer;
   margin: 0 auto;
-}
-
-.row::after {
-  clear: both;
-  display: block;
-  content: "";
-}
-
-.row {
-  padding: 10px;
-  margin-bottom: 5px;
-  height: 100%;
-  border: 1px solid red;
 }
