@@ -1,6 +1,8 @@
 @import "variables";
 @import "typography";
 
+@import "../../modules/Titlebar/Titlebar";
+
 html {
   box-sizing: border-box;
   font-family: $font, sans-serif;
@@ -14,7 +16,7 @@ html {
 }
 
 .container {
-  max-width: $container-width;
-  padding: 0 $spacer;
+  width: $container-width;
+  padding: 0 2 * $spacer;
   margin: 0 auto;
 }
