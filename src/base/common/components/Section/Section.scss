@@ -1,0 +1,22 @@
+.htr-section-view {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3 * $spacer 0;
+}
+
+.htr-section-box {
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px $gray;
+}
+
+.htr-section-title {
+  color: $blue;
+  font-family: $font;
+  @include text-large();
+  font-weight: 300;
+  border-bottom: 1px solid $gray;
+  padding: $spacer 0;
+}

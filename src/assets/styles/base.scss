@@ -2,11 +2,16 @@
 @import "typography";
 
 @import "../../modules/Titlebar/Titlebar";
+@import "../../base/common/components/Section/Section";
 
 html {
   box-sizing: border-box;
   font-family: $font, sans-serif;
   color: $text-color;
+}
+
+body {
+  background-color: $gray-light;
 }
 
 *, *:before, *:after {
@@ -17,6 +22,19 @@ html {
 
 .container {
   width: $container-width;
-  padding: 0 2 * $spacer;
+  padding: 0 4 * $spacer;
   margin: 0 auto;
+}
+
+.row::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.row {
+  padding: 10px;
+  margin-bottom: 5px;
+  height: 100%;
+  border: 1px solid red;
 }
