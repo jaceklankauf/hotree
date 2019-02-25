@@ -4,7 +4,8 @@
 @import "../../modules/Titlebar/Titlebar";
 @import "../../base/common/components/Section/Section";
 @import "../../modules/AboutComponent/AboutComponent";
-@import "../../base/common/components/Input/Input";
+@import "../../base/common/components/Form.scss";
+@import "../../base/common/components/Textarea/Textarea";
 
 html {
   box-sizing: border-box;

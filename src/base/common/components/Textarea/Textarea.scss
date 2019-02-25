@@ -1,0 +1,15 @@
+textarea {
+  resize: none;
+}
+
+.textarea-counter {
+  height: 20px;
+}
+
+.counter-box {
+  font-style: italic;
+  color: $gray;
+  @include text-xxsmall();
+  display: flex;
+  justify-content: space-between
+}

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Input extends React.Component {
+class TextArea extends Component {
   render() {
     const { name, label, placeholder, value, onChange, required, ...props } = this.props;
+
     return (
-      <div className="htr-input-wrapper">
+      <div className="htr-textarea-wrapper">
         <div className="htr-label-box">
           <label
             className="htr-label"
@@ -15,11 +16,11 @@ class Input extends React.Component {
           </label>
         </div>
         <div className="htr-input-box">
-          <input
+          <textarea
             required={required}
             onChange={onChange}
             className="htr-input"
-            name={name}
+            id={name}
             placeholder={placeholder}
             value={value}
             {...props}
@@ -30,23 +31,27 @@ class Input extends React.Component {
   }
 }
 
-Input.defaultProps = {
+TextArea.defaultProps = {
   input: {
-    name: null,
     value: null,
+    name: null,
     onChange: null,
+    maxLength: null,
+    wrap: null
   },
-  value: ''
+  rows: 4
 };
 
-Input.propTypes = {
-  required: PropTypes.bool,
-  name: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'number', 'email', 'hidden', 'password', 'tel', 'search', 'date', 'time']),
-  label: PropTypes.any,
-  placeholder: PropTypes.string,
+TextArea.propTypes = {
   value: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'number', 'email', 'hidden', 'password', 'tel', 'search', 'date', 'time']),
+  name: PropTypes.string,
   onChange: PropTypes.func,
+  maxLength: PropTypes.number,
+  wrap: PropTypes.string,
+  required: PropTypes.bool,
+  placeholder: PropTypes.string,
 };
 
-export default Input;
+export default TextArea;

@@ -6,6 +6,18 @@
   align-items: center;
 }
 
+.htr-textarea-wrapper {
+  width: 100%;
+  height: $textarea-height;
+  margin: $spacer 0;
+  display: flex;
+}
+
+.htr-label-box {
+  min-width: 100px;
+  padding: $spacer 0;
+}
+
 .htr-label {
   color: $blue-light;
   font-family: $font;
@@ -15,14 +27,14 @@
 
 .htr-input {
   height: 100%;
-  width: 80%;
+  width: 100%;
   border: 1px solid $gray;
   border-radius: 2px;
   font-family: $font;
   color: $gray-dark;
   @include text-xsmall();
   font-weight: 300;
-  padding: 0 $spacer;
+  padding: $spacer;
   outline: none;
   &::placeholder {
     color:$gray;
@@ -30,7 +42,7 @@
 }
 
 .htr-input-box {
-  width: 70%;
+  width: 350px;
   margin: 0 auto;
   height: 100%;
 }
