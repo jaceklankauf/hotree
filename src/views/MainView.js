@@ -2,6 +2,7 @@ import React from 'react';
 import Titlebar from '../modules/Titlebar/Titlebar';
 import Section from '../base/common/components/Section/Section';
 import AboutComponent from '../modules/AboutComponent/AboutComponent';
+import CoordinatorComponent from '../modules/CoordinatorComponent/CoordinatorComponent';
 
 export class MainView extends React.Component {
   render() {
@@ -9,7 +10,7 @@ export class MainView extends React.Component {
       <React.Fragment>
         <Titlebar />
         <AboutComponent />
-        <Section text="Coordinator" />
+        <CoordinatorComponent/>
         <Section text="When" />
       </React.Fragment>
     );

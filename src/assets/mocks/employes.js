@@ -60,4 +60,4 @@ export const employees =
     'lastname': 'Stewart',
     'email': 'janet.stewart@hussa.rs'
   }
-]
+];
