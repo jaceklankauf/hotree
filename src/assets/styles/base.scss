@@ -4,7 +4,10 @@
 @import "../../modules/Titlebar/Titlebar";
 @import "../../base/common/components/Section/Section";
 @import "../../modules/AboutComponent/AboutComponent";
-@import "../../base/common/components/Input/Input";
+@import "../../base/common/components/Form.scss";
+@import "../../base/common/components/Textarea/Textarea";
+@import "../../base/common/components/NumberInput/NumberInput";
+@import "../../modules/AboutComponent/CategorySelect";
 
 html {
   box-sizing: border-box;
@@ -24,6 +27,6 @@ body {
 
 .container {
   width: $container-width;
-  padding: 0 4 * $spacer;
+  padding: $spacer 4 * $spacer;
   margin: 0 auto;
 }

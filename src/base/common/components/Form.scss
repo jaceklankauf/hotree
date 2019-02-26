@@ -1,0 +1,91 @@
+.htr-input-wrapper {
+  width: 100%;
+  height: $input-height;
+  margin: $spacer 0;
+  display: flex;
+  align-items: center;
+}
+
+.htr-textarea-wrapper {
+  width: 100%;
+  height: $textarea-height;
+  margin: $spacer 0;
+  display: flex;
+}
+
+.htr-label-box {
+  min-width: 100px;
+  padding: $spacer 0;
+}
+
+.htr-label {
+  color: $blue-light;
+  font-family: $font;
+  @include text-xsmall();
+  font-weight: 300;
+}
+
+.htr-input,
+.htr-select {
+  height: 100%;
+  width: 100%;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  font-family: $font;
+  color: $gray-dark;
+  @include text-xsmall();
+  font-weight: 300;
+  padding: $spacer;
+  outline: none;
+  &::placeholder {
+    color:$gray;
+  }
+}
+
+.htr-select {
+  padding: 0.5 * $spacer $spacer;
+  background-color: $white;
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='50' fill='%238F98D2'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+  background-size: 12px;
+  background-position: calc(100% - 10px) center;
+}
+
+.htr-input-box {
+  width: 350px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subsidiary-text {
+  @include text-xxxsmall();
+}
+
+.subsidiary-text-box {
+  font-style: italic;
+  color: $gray;
+  display: flex;
+  justify-content: space-between
+}
+
+.htr-input-label {
+  color: $gray-dark;
+  margin-left: 0.75 * $spacer;
+  margin-right: 1.5 * $spacer;
+  @include text-xsmall();
+}
+
+.htr-radio-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.htr-number-input-container{
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
