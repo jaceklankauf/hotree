@@ -1,7 +1,8 @@
 .htr-input-wrapper {
   width: 100%;
   height: $input-height;
-  margin: $spacer 0;
+  margin-top: 2 * $spacer;
+  margin-bottom: 0.5 * $spacer;
   display: flex;
   align-items: center;
 }
@@ -9,7 +10,8 @@
 .htr-textarea-wrapper {
   width: 100%;
   height: $textarea-height;
-  margin: $spacer 0;
+  margin-top: 2 * $spacer;
+  margin-bottom: 0.5 * $spacer;
   display: flex;
 }
 
@@ -41,19 +43,31 @@
     color:$gray;
   }
 }
+.date {
+  width: 200px;
+}
+
+.time {
+  width: 100px;
+  margin-right: $spacer;
+}
+
+.subsidiary {
+  margin-top: 0.5 * $spacer;
+}
 
 .htr-select {
   padding: 0.5 * $spacer $spacer;
   background-color: $white;
-  -webkit-appearance: none;
-  -webkit-border-radius: 2px;
+  appearance: none;
+  border-radius: 2px;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='50' fill='%238F98D2'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
   background-size: 12px;
   background-position: calc(100% - 10px) center;
 }
 
 .htr-input-box {
-  width: 350px;
+  width: 550px;
   margin: 0 auto;
   height: 100%;
   display: flex;
