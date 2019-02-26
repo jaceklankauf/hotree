@@ -1,7 +1,9 @@
 import React from 'react';
 import Input from '../../base/common/components/Input/Input';
 import TextArea from '../../base/common/components/Textarea/Textarea';
-import { categories } from '../../assets/mocks/categories';
+import CategorySelect from './CategorySelect';
+import PaymentRadioInput from './PaymentRadioInput';
+import RewardInput from './RewardInput';
 
 class AboutSectionContent extends React.Component {
   constructor(props) {
@@ -10,7 +12,7 @@ class AboutSectionContent extends React.Component {
     this.state = {
       titleInputValue: '',
       descriptionInputValue: '',
-      counter: 0
+      counter: 0,
     };
   }
 
@@ -23,7 +25,7 @@ class AboutSectionContent extends React.Component {
   descriptionInputOnChange = (e) => {
     this.setState({
       descriptionInputValue: e.target.value,
-      counter: this.state.descriptionInputValue.length
+      counter: e.target.value.length
     });
   };
 
@@ -52,20 +54,14 @@ class AboutSectionContent extends React.Component {
         />
         <div className="htr-input-wrapper">
           <div className="htr-label-box"></div>
-          <div className="htr-input-box counter-box">
-            <div className="textarea-counter">Max length 140 characters</div>
-            <div className="textarea-counter">{this.state.counter}/140</div>
+          <div className="htr-input-box subsidiary-text-box">
+            <div className="subsidiary-text">Max length 140 characters</div>
+            <div className="subsidiary-text">{this.state.counter}/140</div>
           </div>
         </div>
-        <div className="htr-input-wrapper">
-          <select>
-            {categories.map((category) => 
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            )}
-          </select>
-        </div>
+        <CategorySelect />
+        <PaymentRadioInput />
+        <RewardInput/>
       </div>
     );
   }
