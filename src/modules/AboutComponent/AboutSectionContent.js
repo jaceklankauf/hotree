@@ -52,7 +52,7 @@ class AboutSectionContent extends React.Component {
           maxLength={140}
           wrap="soft"
         />
-        <div className="htr-input-wrapper">
+        <div className="htr-input-wrapper subsidiary">
           <div className="htr-label-box"></div>
           <div className="htr-input-box subsidiary-text-box">
             <div className="subsidiary-text">Max length 140 characters</div>
