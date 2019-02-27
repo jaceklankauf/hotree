@@ -1,21 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { employees } from '../../assets/mocks/employes';
 
 export class CategorySelect extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedValue: ''
-    };
-  }
-
-  handleSelectValue = e => {
-    this.setState({
-      selectedValue: e.target.value
-    });
-  };
-
   render() {
     const personMe = employees.find((employee) => employee.id === 3);
     return (
@@ -28,9 +15,10 @@ export class CategorySelect extends React.Component {
           </div>
           <div className="htr-input-box">
             <select
+              required={true}
               className="htr-select"
-              value={this.state.selectedValue || 3}
-              onChange={this.handleSelectValue}
+              onChange={this.props.onChange}
+              name="coordinator"
             >
               <optgroup label="Me">
                 <option key={personMe.id} value={personMe.id}>
@@ -51,5 +39,9 @@ export class CategorySelect extends React.Component {
     );
   }
 }
+
+CategorySelect.propTypes = {
+  onChange: PropTypes.func,
+};
 
 export default CategorySelect;

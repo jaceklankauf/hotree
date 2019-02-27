@@ -1,17 +1,13 @@
 import React from 'react';
 import Titlebar from '../modules/Titlebar/Titlebar';
-import AboutComponent from '../modules/AboutComponent/AboutComponent';
-import CoordinatorComponent from '../modules/CoordinatorComponent/CoordinatorComponent';
-import WhenComponent from '../modules/WhenComponent/WhenComponent';
+import Form from '../modules/Form/Form';
 
 export class MainView extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Titlebar />
-        <AboutComponent />
-        <CoordinatorComponent/>
-        <WhenComponent />
+        <Form />
       </React.Fragment>
     );
   }

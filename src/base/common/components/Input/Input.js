@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Input extends React.Component {
   render() {
-    const { name, label, placeholder, value, onChange, required, ...props } = this.props;
+    const { name, label, placeholder, onChange, required, ...props } = this.props;
     return (
       <div className="htr-input-wrapper">
         <div className="htr-label-box">
@@ -21,7 +21,6 @@ class Input extends React.Component {
             className="htr-input"
             name={name}
             placeholder={placeholder}
-            value={value}
             {...props}
           />
         </div>
@@ -33,10 +32,8 @@ class Input extends React.Component {
 Input.defaultProps = {
   input: {
     name: null,
-    value: null,
     onChange: null,
-  },
-  value: ''
+  }
 };
 
 Input.propTypes = {
@@ -45,7 +42,6 @@ Input.propTypes = {
   type: PropTypes.oneOf(['text', 'number', 'email', 'hidden', 'password', 'tel', 'search', 'date', 'time']),
   label: PropTypes.any,
   placeholder: PropTypes.string,
-  value: PropTypes.string,
   onChange: PropTypes.func,
 };
 

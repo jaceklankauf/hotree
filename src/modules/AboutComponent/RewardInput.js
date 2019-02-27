@@ -1,21 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NumberInput from '../../base/common/components/NumberInput/NumberInput';
 
 export class RewardInput extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      pointsInputValue: ''
-    };
-  }
-
-  pointsInputOnChange = (e) => {
-    this.setState({
-      pointsInputValue: e.target.value,
-    });
-  };
-  
   render() {
     return (
       <React.Fragment>
@@ -30,11 +17,11 @@ export class RewardInput extends React.Component {
 
               <NumberInput
                 type="number"
-                onChange={this.pointsInputOnChange}
-                name="Number"
+                onChange={this.props.onChange}
+                name="reward"
                 label="Number"
                 placeholder="Number"
-                value={this.state.pointsInputValue}
+                // value={this.state.pointsInputValue}
               />
               <label className="htr-input-label">
                 reward points for attendance
@@ -46,5 +33,9 @@ export class RewardInput extends React.Component {
     );
   }
 }
+
+RewardInput.propTypes = {
+  onChange: PropTypes.func,
+};
 
 export default RewardInput;

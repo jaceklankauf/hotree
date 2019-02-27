@@ -1,21 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { categories } from '../../assets/mocks/categories';
 
 export class CategorySelect extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      selectedValue: ''
-    };
-  }
-
-  handleSelectValue = e => {
-    this.setState({
-      selectedValue: e.target.value
-    });
-  };
-
   render() {
     return (
       <React.Fragment>
@@ -28,19 +15,19 @@ export class CategorySelect extends React.Component {
           <div className="htr-input-box">
             <select
               className="htr-select"
-              value={this.state.selectedValue}
-              onChange={this.handleSelectValue}
+              name="category_id"
+              onChange={this.props.onChange}
             >
               <option
-                value=""
                 defaultValue
                 className="htr-default-select"
                 disabled
+                selected
               >
                 Select your category
               </option>
               {categories.map((category) =>
-                <option key={category.id} value={category.name}>
+                <option key={category.id} value={category.id}>
                   {category.name}
                 </option>
               )}
@@ -57,5 +44,9 @@ export class CategorySelect extends React.Component {
     );
   }
 }
+
+CategorySelect.propTypes = {
+  onChange: PropTypes.func,
+};
 
 export default CategorySelect;
