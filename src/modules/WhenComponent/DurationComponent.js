@@ -1,21 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NumberInput from '../../base/common/components/NumberInput/NumberInput';
 
 export class DurationComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      timeInputValue: ''
-    };
-  }
-
-  timeInputOnChange = (e) => {
-    this.setState({
-      timeInputValue: e.target.value,
-    });
-  };
-  
   render() {
     return (
       <React.Fragment>
@@ -29,11 +16,11 @@ export class DurationComponent extends React.Component {
             <div className="htr-number-input-container">
               <NumberInput
                 type="number"
-                onChange={this.timeInputOnChange}
-                name="Number"
+                onChange={this.props.onChange}
+                name="duration"
                 label="Number"
                 placeholder="Number"
-                value={this.state.timeInputValue}
+                value={this.value}
               />
               <label className="htr-input-label">
                 hour
@@ -45,5 +32,9 @@ export class DurationComponent extends React.Component {
     );
   }
 }
+
+DurationComponent.propTypes = {
+  onChange: PropTypes.func,
+};
 
 export default DurationComponent;

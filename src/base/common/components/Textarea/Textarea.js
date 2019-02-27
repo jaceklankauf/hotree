@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class TextArea extends Component {
   render() {
-    const { name, label, placeholder, value, onChange, required, ...props } = this.props;
+    const { name, label, placeholder, onChange, required, ...props } = this.props;
 
     return (
       <div className="htr-textarea-wrapper">
@@ -20,9 +20,9 @@ class TextArea extends Component {
             required={required}
             onChange={onChange}
             className="htr-input"
+            name={name}
             id={name}
             placeholder={placeholder}
-            value={value}
             {...props}
           />
         </div>
@@ -33,7 +33,6 @@ class TextArea extends Component {
 
 TextArea.defaultProps = {
   input: {
-    value: null,
     name: null,
     onChange: null,
     maxLength: null,
@@ -43,7 +42,6 @@ TextArea.defaultProps = {
 };
 
 TextArea.propTypes = {
-  value: PropTypes.string,
   label: PropTypes.string,
   type: PropTypes.oneOf(['text', 'number', 'email', 'hidden', 'password', 'tel', 'search', 'date', 'time']),
   name: PropTypes.string,

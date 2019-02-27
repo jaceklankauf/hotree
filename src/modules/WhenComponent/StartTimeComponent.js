@@ -27,6 +27,7 @@ export class PaymentRadioInput extends React.Component {
           <div className="htr-input-box">
             <div className="htr-number-input-container">
               <input
+                required={true}
                 className="htr-input date"
                 type="date"
                 min={new Date().toISOString().split('T')[0]}>

@@ -1,0 +1,13 @@
+.htr-submit {
+  display: flex;
+  justify-content: center;
+}
+
+.htr-submit-btn {
+  background-color: $orange;
+  height: 50px;
+  width: 180px;
+  @include text-xsmall();
+  color: $white;
+  border-radius: 2px;
+}
