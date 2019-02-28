@@ -13,7 +13,10 @@ export class Form extends React.Component {
       paid_event: '',
       event_fee: '',
       reward: '',
-      date: '',
+      date: {
+        date: '',
+        time: ''
+      },
       duration: '',
       coordinator: {
         id: '',
@@ -21,16 +24,46 @@ export class Form extends React.Component {
       }
     }
   }
-  
-  handleInput = (evt) => {
-    this.setState({
-      form: {
-        ...this.state.form,
-        [evt.target.name]: evt.target.value,
-      }
-    });
+
+  handleInput = (e) => {
+    if (e.target.name === 'duration') {
+      this.setState({
+        form: {
+          ...this.state.form,
+          [e.target.name]: e.target.value * 3600,
+        }
+      });
+    } else if (e.target.name === 'id' || e.target.name === 'email') {
+      this.setState({
+        form: {
+          ...this.state.form,
+          coordinator: { ...this.state.form.coordinator, [e.target.name]: e.target.value },
+        }
+      });
+    } else if (e.target.name === 'paid_event') {
+      this.setState({
+        form: {
+          ...this.state.form,
+          paid_event: e.target.value === 'Paid event',
+        }
+      });
+    } else if (e.target.name === 'date' || e.target.name === 'time') {
+      this. setState({
+        form: {
+          ...this.state.form,
+          date: {...this.state.form.date, [e.target.name]: e.target.value},
+        }
+      });
+    } else {
+      this.setState({
+        form: {
+          ...this.state.form,
+          [e.target.name]: e.target.value,
+        }
+      });
+    }
   }
-  
+
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state.form);

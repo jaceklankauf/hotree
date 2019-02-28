@@ -18,7 +18,7 @@ export class CategorySelect extends React.Component {
               required={true}
               className="htr-select"
               onChange={this.props.onChange}
-              name="coordinator"
+              name="id"
             >
               <optgroup label="Me">
                 <option key={personMe.id} value={personMe.id}>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Input from '../../base/common/components/Input/Input';
 
 export class EmailInput extends React.Component {
@@ -7,7 +8,7 @@ export class EmailInput extends React.Component {
       <div>
         <Input
           type="email"
-          onChange={this.onChange}
+          onChange={this.props.onChange}
           name="email"
           label="EMAIL"
           placeholder="Email"
@@ -16,5 +17,10 @@ export class EmailInput extends React.Component {
     );
   }
 }
+
+EmailInput.propTypes = {
+  onChange: PropTypes.func,
+};
+
 
 export default EmailInput;

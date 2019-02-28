@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export class PaymentRadioInput extends React.Component {
+export class StartTimeComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +13,7 @@ export class PaymentRadioInput extends React.Component {
   handleOptionChange = (changeEvent) => {
     this.setState({
       selectedOption: changeEvent.target.value
-    });
+    }, this.props.onChange(changeEvent));
   };
 
   render() {
@@ -30,12 +31,22 @@ export class PaymentRadioInput extends React.Component {
                 required={true}
                 className="htr-input date"
                 type="date"
-                min={new Date().toISOString().split('T')[0]}>
+                min={new Date().toISOString().split('T')[0]}
+                name="date"
+                onChange={this.props.onChange}
+              >
               </input>
               <label className="htr-input-label">
                 at
               </label>
-              <input className="htr-input time" type="time" min="00:00" max="12:00"></input>
+              <input
+                className="htr-input time"
+                type="time"
+                min="00:00"
+                max="12:00"
+                name="time"
+                onChange={this.props.onChange}
+              />
             </div>
             <div className="htr-radio-box">
               <div className="htr-radio">
@@ -68,4 +79,8 @@ export class PaymentRadioInput extends React.Component {
   }
 }
 
-export default PaymentRadioInput;
+StartTimeComponent.propTypes = {
+  onChange: PropTypes.func,
+};
+
+export default StartTimeComponent;

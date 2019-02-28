@@ -13,11 +13,10 @@ export class PaymentRadioInput extends React.Component {
   }
 
   handleOptionChange = (e) => {
-    this.setState({
-      selectedOption: e.target.value
-    });
+    this.setState({ selectedOption: e.target.value },
+      this.props.onChange(e));
   };
-  
+
   render() {
     return (
       <React.Fragment>
@@ -33,7 +32,7 @@ export class PaymentRadioInput extends React.Component {
                 <input
                   type="radio"
                   value="Free event"
-                  name="free_event"
+                  name="paid_event"
                   checked={this.state.selectedOption === 'Free event'}
                   onChange={this.handleOptionChange}
                 />
