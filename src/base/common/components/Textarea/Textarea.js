@@ -9,7 +9,7 @@ class TextArea extends Component {
       <div className="htr-textarea-wrapper">
         <div className="htr-label-box">
           <label
-            className="htr-label"
+            className={`htr-label ${required ? 'required-label' : 'req'}`}
             htmlFor={name}
           >
             {label}
@@ -17,15 +17,15 @@ class TextArea extends Component {
         </div>
         <div className="htr-input-box">
           <textarea
-            required={required}
             onChange={onChange}
-            className="htr-input"
+            className={`htr-input ${required ? 'required' : ''}`}
             name={name}
             id={name}
             placeholder={placeholder}
             {...props}
           />
         </div>
+        {required ? <span className="tooltip">{name} cannot be empty</span> : ''}
       </div>
     );
   }

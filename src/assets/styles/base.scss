@@ -3,12 +3,11 @@
 
 @import "../../modules/Titlebar/Titlebar";
 @import "../../base/common/components/Section/Section";
-@import "../../modules/AboutComponent/AboutComponent";
 @import "../../base/common/components/Form.scss";
 @import "../../base/common/components/Textarea/Textarea";
 @import "../../base/common/components/NumberInput/NumberInput";
-@import "../../modules/AboutComponent/CategorySelect";
 @import "../../modules/PublishButton/PublishButton";
+@import "../../modules/SuccessComponent/SuccessComponent";
 
 html {
   box-sizing: border-box;

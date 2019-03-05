@@ -7,8 +7,14 @@ class CoordinatorSectionContent extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <ResponsiblePersonSelect onChange={this.props.onChange} />
-        <EmailInput onChange={this.props.onChange} />
+        <ResponsiblePersonSelect
+          onChange={this.props.onChange}
+          required={this.props.required.indexOf('coordinator') !== -1}
+        />
+        <EmailInput
+          onChange={this.props.onChange}
+          required={this.props.required.indexOf('email') !== -1}
+        />
       </React.Fragment>
     );
   }
@@ -16,6 +22,7 @@ class CoordinatorSectionContent extends React.Component {
 
 CoordinatorSectionContent.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default CoordinatorSectionContent;

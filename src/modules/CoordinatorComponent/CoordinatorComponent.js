@@ -8,7 +8,7 @@ export class CoordinatorComponent extends React.Component {
     return (
       <div>
         <Section text="Coordinator">
-          <CoordinatorSectionContent onChange={this.props.onChange}/>
+          <CoordinatorSectionContent onChange={this.props.onChange} required={this.props.required} />
         </Section>
       </div>
     );
@@ -17,6 +17,7 @@ export class CoordinatorComponent extends React.Component {
 
 CoordinatorComponent.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default CoordinatorComponent;

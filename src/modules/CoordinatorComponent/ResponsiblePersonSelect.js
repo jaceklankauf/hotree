@@ -5,18 +5,18 @@ import { employees } from '../../assets/mocks/employes';
 export class CategorySelect extends React.Component {
   render() {
     const personMe = employees.find((employee) => employee.id === 3);
+    const { required } = this.props;
     return (
       <React.Fragment>
         <div className="htr-input-wrapper">
           <div className="htr-label-box">
-            <div className="htr-label">
+            <div className={`htr-label ${required ? 'required-label' : 'req'}`}>
               RESPONSIBLE
             </div>
           </div>
           <div className="htr-input-box">
             <select
-              required={true}
-              className="htr-select"
+              className={`htr-select ${required ? 'required' : 'req'}`}
               onChange={this.props.onChange}
               name="id"
             >
@@ -42,6 +42,7 @@ export class CategorySelect extends React.Component {
 
 CategorySelect.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.bool
 };
 
 export default CategorySelect;

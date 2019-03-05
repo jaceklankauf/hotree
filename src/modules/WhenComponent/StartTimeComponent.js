@@ -1,51 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 export class StartTimeComponent extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedOption: 'Free event',
+      selectedOption: 'AM',
+      date: '',
+      time: ''
     };
   }
 
-  handleOptionChange = (changeEvent) => {
+  handleChange = (changeEvent) => {
     this.setState({
-      selectedOption: changeEvent.target.value
-    }, this.props.onChange(changeEvent));
+      selectedOption: changeEvent.target.value,
+      [changeEvent.target.name]: changeEvent.target.value
+    }, this.handleDateTimeChange(changeEvent));
   };
 
+  handleDateTimeChange = (changeEvent) => {
+    const { date, time } = this.state;
+    if (date && time) {
+      const format12Time = time + changeEvent.target.value;
+      const format24Time = moment(format12Time, ['h:mm A']).format('HH:mm');
+      const dateTime = date + 'T' + format24Time;
+      this.props.onDateTimeChange(dateTime);
+    }
+  }
+
   render() {
+    const { required } = this.props;
     return (
       <React.Fragment>
         <div className="htr-input-wrapper">
           <div className="htr-label-box">
-            <div className="htr-label">
+            <div className={`htr-label ${required ? 'required-label' : 'req'}`}>
               STARTS ON
             </div>
           </div>
           <div className="htr-input-box">
             <div className="htr-number-input-container">
               <input
-                required={true}
-                className="htr-input date"
+                className={`htr-input date ${required ? 'required' : ''}`}
                 type="date"
                 min={new Date().toISOString().split('T')[0]}
                 name="date"
-                onChange={this.props.onChange}
+                onChange={this.handleChange}
               >
               </input>
               <label className="htr-input-label">
                 at
               </label>
               <input
-                className="htr-input time"
+                className={`htr-input time ${required ? 'required' : ''}`}
                 type="time"
                 min="00:00"
                 max="12:00"
                 name="time"
-                onChange={this.props.onChange}
+                onChange={this.handleChange}
               />
             </div>
             <div className="htr-radio-box">
@@ -54,7 +68,7 @@ export class StartTimeComponent extends React.Component {
                   type="radio"
                   value="AM"
                   checked={this.state.selectedOption === 'AM'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.handleChange}
                 />
                 <label className="htr-input-label">
                   AM
@@ -65,7 +79,7 @@ export class StartTimeComponent extends React.Component {
                   type="radio"
                   value="PM"
                   checked={this.state.selectedOption === 'PM'}
-                  onChange={this.handleOptionChange}
+                  onChange={this.handleChange}
                 />
                 <label className="htr-input-label">
                   PM
@@ -73,6 +87,7 @@ export class StartTimeComponent extends React.Component {
               </div>
             </div>
           </div>
+          {required ? <span className="tooltip">date and time cannot be empty</span> : ''}
         </div>
       </React.Fragment>
     );
@@ -81,6 +96,8 @@ export class StartTimeComponent extends React.Component {
 
 StartTimeComponent.propTypes = {
   onChange: PropTypes.func,
+  onDateTimeChange: PropTypes.func,
+  required: PropTypes.bool
 };
 
 export default StartTimeComponent;

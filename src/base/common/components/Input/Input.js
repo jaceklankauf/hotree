@@ -8,7 +8,7 @@ class Input extends React.Component {
       <div className="htr-input-wrapper">
         <div className="htr-label-box">
           <label
-            className="htr-label"
+            className={`htr-label ${required ? 'required-label' : 'req'}`}
             htmlFor={name}
           >
             {label}
@@ -16,14 +16,14 @@ class Input extends React.Component {
         </div>
         <div className="htr-input-box">
           <input
-            required={required}
             onChange={onChange}
-            className="htr-input"
+            className={`htr-input ${required ? 'required' : ''}`}
             name={name}
             placeholder={placeholder}
             {...props}
           />
         </div>
+        {required ? <span className="tooltip">{name} cannot be empty</span> : ''}
       </div>
     );
   }

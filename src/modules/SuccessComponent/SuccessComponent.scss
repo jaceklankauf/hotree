@@ -1,0 +1,21 @@
+.success-section-view {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3 * $spacer 0;
+  color: $gray-dark;
+}
+
+.success-section-box {
+  background-color: $green-light;
+  border-radius: 5px;
+  box-shadow: 0 0 10px $gray;
+}
+
+.success-section-title {
+  color: $green;
+  font-family: $font;
+  @include text-large();
+  font-weight: 300;
+  padding-bottom: $spacer;
+}

@@ -8,7 +8,6 @@ export class PaymentRadioInput extends React.Component {
 
     this.state = {
       selectedOption: 'Free event',
-      feeInputValue: ''
     };
   }
 
@@ -56,7 +55,7 @@ export class PaymentRadioInput extends React.Component {
                 {this.state.selectedOption === 'Paid event' ?
                   <div className="htr-number-input-container">
                     <NumberInput
-                      required={true}
+                      required={this.props.required.indexOf('event_fee') !== -1}
                       type="number"
                       onChange={this.props.onChange}
                       name="event_fee"
@@ -79,6 +78,7 @@ export class PaymentRadioInput extends React.Component {
 
 PaymentRadioInput.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default PaymentRadioInput;

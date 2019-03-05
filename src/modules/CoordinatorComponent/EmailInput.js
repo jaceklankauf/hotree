@@ -4,6 +4,7 @@ import Input from '../../base/common/components/Input/Input';
 
 export class EmailInput extends React.Component {
   render() {
+    const { required } = this.props;
     return (
       <div>
         <Input
@@ -13,6 +14,14 @@ export class EmailInput extends React.Component {
           label="EMAIL"
           placeholder="Email"
         />
+        {required ?
+          <div className="htr-input-wrapper subsidiary">
+            <div className="htr-label-box"></div>
+            <div className="htr-input-box subsidiary-email-box">
+              <div className="subsidiary-text">Insert email in correct format abcd@efgh.ijk</div>
+            </div>
+          </div>
+          : ''}
       </div>
     );
   }
@@ -20,6 +29,7 @@ export class EmailInput extends React.Component {
 
 EmailInput.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.bool
 };
 
 
