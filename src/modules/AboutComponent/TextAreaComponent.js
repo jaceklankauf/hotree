@@ -20,7 +20,7 @@ class TextAreaComponent extends React.Component {
     return (
       <div>
         <TextArea
-          required={true}
+          required={this.props.required.indexOf('description') !== -1}
           type="text"
           onChange={this.handleTextArea}
           name="description"
@@ -28,7 +28,6 @@ class TextAreaComponent extends React.Component {
           placeholder="Write about your event, be creative"
           maxLength={140}
           wrap="soft"
-          // value={this.state.inputValue}
         />
         <div className="htr-input-wrapper subsidiary">
           <div className="htr-label-box"></div>
@@ -44,6 +43,7 @@ class TextAreaComponent extends React.Component {
 
 TextAreaComponent.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default TextAreaComponent;

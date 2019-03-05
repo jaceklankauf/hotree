@@ -8,7 +8,7 @@ export class AboutComponent extends React.Component {
     return (
       <div>
         <Section text="About">
-          <AboutSectionContent onChange={this.props.onChange} />
+          <AboutSectionContent onChange={this.props.onChange} required={this.props.required} />
         </Section>
       </div>
     );
@@ -17,6 +17,7 @@ export class AboutComponent extends React.Component {
 
 AboutComponent.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default AboutComponent;

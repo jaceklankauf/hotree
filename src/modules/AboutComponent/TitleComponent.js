@@ -3,25 +3,16 @@ import PropTypes from 'prop-types';
 import Input from '../../base/common/components/Input/Input';
 
 class TitleComponent extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      inputValue: '',
-    };
-  }
-
   render() {
     return (
       <div>
         <Input
-          required={true}
+          required={this.props.required.indexOf('title') !== -1}
           type="text"
           onChange={this.props.onChange}
           name="title"
           label="TITLE"
           placeholder="Make it short and clear"
-          // value={this.state.inputValue}
         />
       </div>
     );
@@ -30,7 +21,7 @@ class TitleComponent extends React.Component {
 
 TitleComponent.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array,
 };
-
 
 export default TitleComponent;

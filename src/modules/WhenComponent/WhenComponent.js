@@ -8,7 +8,11 @@ export class WhenComponent extends React.Component {
     return (
       <div>
         <Section text="When">
-          <WhenSectionContent onChange={this.props.onChange}/>
+          <WhenSectionContent
+            onChange={this.props.onChange}
+            onDateTimeChange={this.props.onDateTimeChange}
+            required={this.props.required}
+          />
         </Section>
       </div>
     );
@@ -17,6 +21,8 @@ export class WhenComponent extends React.Component {
 
 WhenComponent.propTypes = {
   onChange: PropTypes.func,
+  onDateTimeChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default WhenComponent;

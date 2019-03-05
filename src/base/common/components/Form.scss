@@ -1,18 +1,19 @@
-.htr-input-wrapper {
+.htr-input-wrapper,
+.htr-textarea-wrapper {
   width: 100%;
-  height: $input-height;
   margin-top: 2 * $spacer;
   margin-bottom: 0.5 * $spacer;
   display: flex;
+  position: relative;
+}
+
+.htr-input-wrapper {
+  height: $input-height;
   align-items: center;
 }
 
 .htr-textarea-wrapper {
-  width: 100%;
   height: $textarea-height;
-  margin-top: 2 * $spacer;
-  margin-bottom: 0.5 * $spacer;
-  display: flex;
 }
 
 .htr-label-box {
@@ -66,6 +67,10 @@
   background-position: calc(100% - 10px) center;
 }
 
+.htr-default-select {
+  color: $gray-light;
+}
+
 .htr-input-box {
   width: 70%;
   margin: 0 auto 0 100px;
@@ -78,11 +83,18 @@
   @include text-xxxsmall();
 }
 
-.subsidiary-text-box {
+.subsidiary-text-box,
+.subsidiary-email-box {
   font-style: italic;
-  color: $gray;
   display: flex;
   justify-content: space-between
+}
+
+.subsidiary-text-box{
+  color: $gray;
+}
+.subsidiary-email-box {
+  color: $danger-color;
 }
 
 .htr-input-label {
@@ -102,4 +114,47 @@
   display: flex;
   align-items: center;
   height: 30px;
+}
+
+.required {
+  border: 1px solid $danger-color;
+}
+
+.required-label {
+  color: $danger-color;
+  &::after {
+    content: ' *';
+    color: $danger-color;
+  }
+}
+
+.req {
+  &::after {
+    content: ' *';
+    color: $danger-color;
+  }
+}
+
+.tooltip {
+  width: 120px;
+  background-color: $danger-color;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1;
+  left: 99%;
+  @include text-xxsmall();
+  
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent $danger-color transparent transparent;
+  }
 }

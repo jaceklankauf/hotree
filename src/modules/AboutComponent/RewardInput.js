@@ -14,14 +14,12 @@ export class RewardInput extends React.Component {
           </div>
           <div className="htr-input-box">
             <div className="htr-number-input-container">
-
               <NumberInput
                 type="number"
                 onChange={this.props.onChange}
                 name="reward"
                 label="Number"
                 placeholder="Number"
-                // value={this.state.pointsInputValue}
               />
               <label className="htr-input-label">
                 reward points for attendance

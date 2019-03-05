@@ -10,11 +10,11 @@ class AboutSectionContent extends React.Component {
   render() {
     return (
       <div>
-        <TitleComponent onChange={this.props.onChange}/>
-        <TextAreaComponent onChange={this.props.onChange}/>
-        <CategorySelect onChange={this.props.onChange}/>
-        <PaymentRadioInput onChange={this.props.onChange}/>
-        <RewardInput onChange={this.props.onChange}/>
+        <TitleComponent onChange={this.props.onChange} required={this.props.required} />
+        <TextAreaComponent onChange={this.props.onChange} required={this.props.required} />
+        <CategorySelect onChange={this.props.onChange} />
+        <PaymentRadioInput onChange={this.props.onChange} required={this.props.required} />
+        <RewardInput onChange={this.props.onChange} />
       </div>
     );
   }
@@ -22,6 +22,7 @@ class AboutSectionContent extends React.Component {
 
 AboutSectionContent.propTypes = {
   onChange: PropTypes.func,
+  required: PropTypes.array
 };
 
 export default AboutSectionContent;
